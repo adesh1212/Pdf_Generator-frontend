@@ -9,8 +9,8 @@ function Uploadfile() {
     const [files, setFiles] = useState([]);
     const [loading, setLoading] = useState(false);
     const fileName = useRef(null);
-    // const server = 'http://localhost:5000';
-    const server = 'https://pdf-generator-ntrb.onrender.com';
+    const server = 'http://localhost:5000';
+    // const server = 'https://pdf-generator-ntrb.onrender.com';
     // useEffect(() => {
     //     console.log(fileName.current);
     // }, [files])
@@ -60,6 +60,7 @@ function Uploadfile() {
 
             saveAs(pdfBlob, 'result.pdf');
 
+            toast.success('Pdf Downloaded Successfully🎊🎊')
             setFiles([]);
             fileName.current.value = '';
 
