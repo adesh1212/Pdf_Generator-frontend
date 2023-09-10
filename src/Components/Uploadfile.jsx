@@ -6,6 +6,7 @@ import { ToastContainer,toast } from 'react-toastify';
 
 function Uploadfile() {
     const [files, setFiles] = useState([]);
+    const [loading,setLoading] = useState(true);
     const fileName = useRef(null);
     // const server = 'http://localhost:5000';
     const server = 'https://pdf-generator-ntrb.onrender.com';
@@ -51,7 +52,7 @@ function Uploadfile() {
 
             // console.log(response);
             const data = await response.data;
-
+            setLoading(false);
             const pdfBlob = new Blob([data], { type: 'application/pdf' })
             // console.log(pdfBlob);
 
